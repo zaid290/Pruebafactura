@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class PruebaFactura {
+public class SistemaFactura {
 
     Scanner sc;
 
-    public PruebaFactura() {
+    public SistemaFactura() {
         sc = new Scanner(System.in);
     }
 
@@ -13,7 +13,7 @@ public class PruebaFactura {
         int opc;
         System.out.println("\n--- SISTEMA DE FACTURA ---");
         System.out.println("1. Crear factura");
-        System.out.println("2. Ver información de la factura");
+        System.out.println("2. Ver informacion de la factura");
         System.out.println("3. Ver monto total");
         System.out.println("4. Actualizar factura");
         System.out.println("5. Salir");
@@ -23,13 +23,13 @@ public class PruebaFactura {
     }
 
     public Factura crearFactura() {
-        System.out.print("Número de pieza: ");
+        System.out.print("Numero de pieza: ");
         String numeroPieza = sc.next();
-        System.out.print("Descripción: ");
+        System.out.print("Descripcion: ");
         String descripcion = sc.next();
         System.out.print("Cantidad: ");
         int cantidad = sc.nextInt();
-        System.out.print("Precio por artículo: ");
+        System.out.print("Precio por articulo: ");
         double precio = sc.nextDouble();
         return new Factura(numeroPieza, descripcion, cantidad, precio);
     }
@@ -39,9 +39,9 @@ public class PruebaFactura {
             System.out.println("Primero debe crear una factura.");
             return;
         }
-        System.out.println("\n--- Información de la Factura ---");
-        System.out.println("Número de pieza: " + factura.getNumeroPieza());
-        System.out.println("Descripción:     " + factura.getDescripcionPieza());
+        System.out.println("\n--- Informacion de la Factura ---");
+        System.out.println("Numero de pieza: " + factura.getNumeroPieza());
+        System.out.println("Descripcion:     " + factura.getDescripcionPieza());
         System.out.println("Cantidad:        " + factura.getCantidad());
         System.out.println("Precio unitario: " + factura.getPrecioPorArticulo());
     }
@@ -59,9 +59,9 @@ public class PruebaFactura {
             System.out.println("Primero debe crear una factura.");
             return;
         }
-        System.out.print("Número de pieza (" + factura.getNumeroPieza() + "): ");
+        System.out.print("Numero de pieza (" + factura.getNumeroPieza() + "): ");
         factura.setNumeroPieza(sc.next());
-        System.out.print("Descripción (" + factura.getDescripcionPieza() + "): ");
+        System.out.print("Descripcion (" + factura.getDescripcionPieza() + "): ");
         factura.setDescripcionPieza(sc.next());
         System.out.print("Cantidad (" + factura.getCantidad() + "): ");
         factura.setCantidad(sc.nextInt());
