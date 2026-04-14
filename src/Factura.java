@@ -1,4 +1,35 @@
-package PACKAGE_NAME;
-
 public class Factura {
+
+    private String numeroPieza;
+    private String descripcionPieza;
+    private int cantidad;
+    private double precioPorArticulo;
+
+    public Factura(String numeroPieza, String descripcionPieza,
+                   int cantidad, double precioPorArticulo) {
+        this.numeroPieza = numeroPieza;
+        this.descripcionPieza = descripcionPieza;
+        setCantidad(cantidad);
+        setPrecioPorArticulo(precioPorArticulo);
+    }
+
+    public double obtenerMontoFactura() {
+        return cantidad * precioPorArticulo;
+    }
+
+    public String getNumeroPieza() { return numeroPieza; }
+    public void setNumeroPieza(String numeroPieza) { this.numeroPieza = numeroPieza; }
+
+    public String getDescripcionPieza() { return descripcionPieza; }
+    public void setDescripcionPieza(String descripcionPieza) { this.descripcionPieza = descripcionPieza; }
+
+    public int getCantidad() { return cantidad; }
+    public void setCantidad(int cantidad) {
+        this.cantidad = (cantidad > 0) ? cantidad : 0;
+    }
+
+    public double getPrecioPorArticulo() { return precioPorArticulo; }
+    public void setPrecioPorArticulo(double precioPorArticulo) {
+        this.precioPorArticulo = (precioPorArticulo > 0.0) ? precioPorArticulo : 0.0;
+    }
 }
